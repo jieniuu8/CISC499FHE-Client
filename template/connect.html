@@ -1,0 +1,31 @@
+{% include 'header.html' %}
+
+<div id="connect-page">
+
+  <p><em> This version works with Django Server of ByteField version </em></p>
+  <br>
+
+  <h5> Connect to Server </h5>
+
+  <form method="POST">
+  {{ ipform.csrf_token }}
+  <div class="input-group" id="connect_server">
+    <div class="col-sm-2">
+      {{ ipform.ip(class="form-control") }}
+      <small class="form-text text-muted"> {{ ipform.ip.label }} </small>
+    </div>
+    <div class="col-sm-2">
+      {{ ipform.port(class="form-control") }}
+      <small class="form-text text-muted"> {{ ipform.port.label }} </small>
+    </div>
+  </div>
+  {{ ipform.submit(class="btn btn-primary login-button") }}
+</form>
+
+
+</div>
+
+
+</body>
+
+</html>

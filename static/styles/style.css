@@ -1,0 +1,146 @@
+/***************/
+/* HEADER.HTML */
+#nav-bar {
+  width: 100%;
+  background-color: rgb(248, 249, 250);
+  overflow: auto;
+}
+
+#nav-bar a {
+  float: left;
+  padding: 12px;
+  text-decoration: none;
+  width: calc(100%/3);
+  text-align: center;
+}
+
+#nav-bar a:hover {
+  background-color: rgb(242, 242, 242);
+  transition: .3s ease-in-out;
+}
+
+#title {
+  display: block;
+  text-align: center;
+  margin: 0px;
+  padding: 15px 0px 0px 0px;
+  background-color: rgb(248, 249, 250);
+}
+
+.alert {
+  position:static;
+  /* right:0; */
+  /* top:10%; */
+  display: block;
+  float: right;
+  padding: 7px;
+  margin: 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.error {
+    color: white;
+    background-color: rgb(228,52,73);
+    border-color: rgb(228,52,73);
+}
+
+.success {
+  color: white;
+  background-color: rgb(0, 167, 76);
+  border-color: rgb(0, 167, 76);
+}
+
+.info {
+  color: white;
+  background-color: rgb(0, 123, 250);
+  border-color: rgb(0, 123, 250);
+}
+
+input.form-control::placeholder {
+    opacity: .3;
+}
+
+ img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+pre {background-color: #eee; border: 1px solid #999; display: block; padding: 20px;}
+
+/**************/
+/* CONNECT.HTML */
+
+#connect-page  {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#connect_server{
+    justify-content: center;
+}
+
+.login-button {
+  margin-bottom: 50px;
+}
+
+.file_upload {
+  background-color: rgb(240,240,240);
+  margin-bottom: 5px;
+}
+
+
+/*****************/
+/* LOGIN.HTML */
+
+#login-page  {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.radio li {
+  list-style: none;
+  display: inline;
+  margin-right: 10px;
+}
+
+.radio {
+  padding: 0px;
+}
+
+#create_session > form > * {
+  margin: 5px;
+}
+
+#create_session span input{
+  display: inline-block;
+}
+
+/*****************/
+/* DATABASE.HTML */
+#session_page {
+  margin: 15px 10px 0px 10px;
+}
+
+.labels {
+  display: inline-flex;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	cursor:pointer;
+	color:#666666;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  margin: 5px;
+}
+
+#path {
+  unicode-bidi: embed;
+  font-family: monospace;
+}

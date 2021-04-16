@@ -1,0 +1,3 @@
+__pycache__/
+etc/*.p
+.DS_Store

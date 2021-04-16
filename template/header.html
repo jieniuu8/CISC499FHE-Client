@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>FHE | {{page}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jie Niu">
+
+
+  <!-- core CSS, JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"> </script>
+
+
+</head>
+
+
+<body>
+  <h4 id="title"> CISC 499 - Homomorphic Encryption </h4>
+    <div id="nav-bar">
+      <a href="/about">About</a>
+      <a href="/database/connect">Database Application</a>
+      <a href="/usage" target="_blank">Usage Guide</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert {{ category }} ">{{ message|safe }}</div>
+        <br>
+      {% endfor %}
+    {% endwith %}

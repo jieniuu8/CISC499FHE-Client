@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+
+<div id="login-page">
+
+  <h6>You are connected to server {{ session['ip'] }} </h6>
+  <br>
+
+   <div id="create_session">
+    <h5> Create a new session</h5>
+    <form action="" method="POST">
+    {{ newSessionConfig.csrf_token }}
+    <p>Session Name: <span> {{ newSessionConfig.session_name(class="form-control col-sm-2") }} </span> </p>
+    <p>Key Size:</p>
+    {{ newSessionConfig.key_size(class="radio") }}
+    <p>Data Type:</p>
+    {{ newSessionConfig.data_type(class="radio") }}
+    {{ newSessionConfig.submit(class="btn btn-primary login-button") }}
+    </form>
+  </div>
+
+  <br>
+  <br>
+
+  <div id="exist_session">
+    <h5> Upload an existing session</h5>
+    <form action="" method="POST" enctype="multipart/form-data">
+    {{ fileForm.csrf_token }}
+    {{ fileForm.file(class="file_upload") }} <br>
+    {{ fileForm.upload(class="btn btn-primary login-button") }}
+    </form>
+  </div>
+
+</div>
