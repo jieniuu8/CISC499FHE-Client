@@ -24,28 +24,43 @@ class fileForm(FlaskForm):
     upload = SubmitField('Upload')
 
 class dataEntry_int(FlaskForm):
+    def validate_label(form, field):
+        if not (field.data.isidentifier()):
+            raise ValidationError("Inproper Label. Please follow PEP")
     # Do a validation on requiring str in label
-    data_label_int = StringField("Label", validators=[DataRequired(), AlphaDash()], render_kw={'placeholder':'numOfPhone'})
+    data_label_int = StringField("Label", validators=[DataRequired(), validate_label], render_kw={'placeholder':'numOfPhone'})
     data_field_int = IntegerField('Data', validators=[DataRequired()], render_kw={"placeholder": '10'})
     submit_int = SubmitField("Submit")
 
 class dataEntry_poly(FlaskForm):
+    def validate_label(form, field):
+        if not (field.data.isidentifier()):
+            raise ValidationError("Inproper Label. Please follow PEP")
     def validate_poly(form, field):
         if not re.match(r"^([+-]?(?:(?:\d+x\^\d+)|(?:\d+x)|(?:\d+)|(?:x)))+$", field.data):
             raise ValidationError('Incorrect form of polynomial (Single-variable)')
-    data_label_poly = StringField("Label", validators=[DataRequired(), AlphaDash()], render_kw={'placeholder':'numOfPhone'})
+    data_label_poly = StringField("Label", validators=[DataRequired(), validate_label], render_kw={'placeholder':'numOfPhone'})
     data_field_poly = StringField('Data',validators=[DataRequired(), validate_poly], render_kw={"placeholder":"2x + 10"})
     submit_poly = SubmitField("Submit")
 
 class dataEval(FlaskForm):
-    data_label_eval = StringField("Label", validators=[DataRequired(), AlphaDash()], render_kw={'placeholder':'numOfElectronics'})
+    def validate_label(form, field):
+        if not (field.data.isidentifier()):
+            raise ValidationError("Inproper Label. Please follow PEP")
+    data_label_eval = StringField("Label", validators=[DataRequired(), validate_label], render_kw={'placeholder':'numOfElectronics'})
     data_field_eval = StringField('Expression', validators=[DataRequired()], render_kw={"placeholder": 'numOfPhone + numOfTablet'})
     submit_eval = SubmitField("Submit")
 
 class dataDecrypt(FlaskForm):
-    data_label_decrypt = StringField("Label", validators=[DataRequired(), AlphaDash()], render_kw={'placeholder':'numOfElectronics'})
+    def validate_label(form, field):
+        if not (field.data.isidentifier()):
+            raise ValidationError("Inproper Label. Please follow PEP")
+    data_label_decrypt = StringField("Label", validators=[DataRequired(), validate_label], render_kw={'placeholder':'numOfElectronics'})
     submit_decrypt = SubmitField("Get")
 
 class dataDelete(FlaskForm):
-    data_label_delete = StringField("Label", validators=[DataRequired(), AlphaDash()], render_kw={'placeholder':'numOfElectronics'})
+    def validate_label(form, field):
+        if not (field.data.isidentifier()):
+            raise ValidationError("Inproper Label. Please follow PEP")
+    data_label_delete = StringField("Label", validators=[DataRequired(), validate_label], render_kw={'placeholder':'numOfElectronics'})
     submit_delete = SubmitField("Delete")

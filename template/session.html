@@ -6,6 +6,11 @@
       Key Size: <span style="color: rgb(0, 123, 250)">{{ session['key_size'] }} Bits</span> ,
       Data Type: <span style="color: rgb(0, 123, 250)">{{ session['data_type'] }}</span> </p>
   </div>
+
+  <div id="warning">
+    You won't be able to return to this session if you shut down your browser application. Please download this session for future use.
+  </div>
+
   <br>
   <h6> Data Entry: </h6>
 
@@ -84,13 +89,15 @@
         {{ dataDecrypt.submit_decrypt(class="btn btn-primary") }}
       </div>
       {% if session['decrypted'] %}
+      <div id="decryption">
       <p> Decrypted value for <span style="color: rgb(0, 123, 250)"> {{ session['decrypted'][0] }} </span>: {{ session['decrypted'][1] }}</p>
+      </div>
       {% endif %}
     </div>
   </form>
   <br>
 
-  <h6> Data Deletion: </h6>
+  <h6> Data Deletion:  <span style='color:red'>This cannot be undone</span> </h6>
   <form method='POST'>
     {{ dataDelete.csrf_token }}
     <div class="row">
@@ -186,7 +193,6 @@
   </h6>
   <script>
     $('#download-session').click(function() {
-          var curr_path =
           bootbox.confirm({
               size: "large",
               title: "Save Session?",
@@ -224,6 +230,8 @@
 
 
 </div>
+
+
 
 
 

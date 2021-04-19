@@ -15,7 +15,9 @@ app.config.update(
     SECRET_KEY='CISC499-FHE-Client-Key'
 )
 
+
 Misaka(app, fenced_code=True)
+
 
 from views.about import *
 from views.database_connect import *

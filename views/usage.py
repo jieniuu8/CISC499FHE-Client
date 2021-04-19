@@ -4,7 +4,6 @@ from models.FHE import FHE_Client, FHE_Integer
 
 @app.route('/usage', methods=['GET', 'POST'])
 def usage():
-    session['label_list'] = []
 
     file = open("readme.md")
     md = file.read()
